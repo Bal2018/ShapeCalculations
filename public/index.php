@@ -28,28 +28,35 @@ require './../vendor/autoload.php';
         <option value="R">Rhombus</option>
         <option value="C">Circle</option>
     </select>
+    <br>
 
     <label id="length"  for="length_entered"  style="display:none">Enter length of shape
         <input type="number" step="0.1" min="0" id="length_entered" name="length_entered"/>
+        <br>
     </label>
 
     <label id="width" for="width_entered"  style="display:none" > Enter width of shape
         <input type="number" min="0" step="0.1" id="width_entered" name="width_entered" />
+        <br><br><br><br>
     </label>
 
     <label id="radius_e" for="radius" style="display:none"> Enter radius of circle
         <input type="number" min="0" step="0.1" id="radius" name="radius_entered" />
+        <br><br><br><br><br><br>
     </label>
-    <input type="submit" value="submit"  />
+
+    <input class="ex1"  type="submit" value="submit"  />
+
 
 </form>
 
 <?php
 if (empty($_GET["shapeEntered"]) ==false){
+
     if ($_GET["shapeEntered"] == "C")  {
-        echo entered($_GET["shapeEntered"],$_GET["length_entered"],$_GET["radius_entered"]). PHP_EOL;
+        echo  entered($_GET["shapeEntered"],$_GET["length_entered"],$_GET["radius_entered"]). PHP_EOL;
     } else {
-            echo entered($_GET["shapeEntered"],$_GET["length_entered"],$_GET["width_entered"]). PHP_EOL;
+        echo  entered($_GET["shapeEntered"],$_GET["length_entered"],$_GET["width_entered"]). PHP_EOL;
     }
 }
 ?>
